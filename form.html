@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Validation Form</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+<div class="app" id="app">
+	<div class="container">
+		<div class="header">
+			<h1 class="header__title">Sign up</h1>
+			<img class="signup-icon" src="assets/person.svg" alt="Sign up icon" width="353" height="353">
+		</div>
+		<form class="registration">
+			<div class="registration__header">
+				<h2 class="registration__header__title">New user?</h2>
+				<p class="registration__header__text">Use the form below to create your account.</p>
+			</div>
+			<div class="registration__main">
+				<label for="firstname">
+					<span class="main__title firstname__text">First Name</span>
+					<input type="text" placeholder="Alice" id="firstname" class="main__input" minlength="2" required>
+				</label>
+				<label for="lastname">
+					<span class="main__title lastname__text">Last Name</span>
+					<input type="text" placeholder="Miller" id="lastname" class="main__input" minlength="2" required>
+				</label>
+				<label for="nationality">
+					<span class="main__title nationality__text">Nationality</span>
+					<select
+						style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
+						class="nationality__select main__input"
+						id="nationality" required>
+						<option>American</option>
+					</select>
+				</label>
+				<label for="email">
+					<span class="main__title email__text">E-mail</span>
+					<input type="email" placeholder="alice.miller@yahoo.com" id="email" class="main__input" minlength="2" required>
+				</label>
+				<label for="birthdate">
+					<span class="main__title birthdate__text">Date of Birth</span>
+					<div id="birthdate" class="birthday__select">
+						<select
+							style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
+							class="day__select" required>
+							<option>21</option>
+						</select>
+						<select
+							style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
+							class="month__select" required>
+							<option>December</option>
+						</select>
+						<select
+							style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
+							class="year__select" required>
+							<option>1995</option>
+						</select>
+					</div>
+				</label>
+				<div id="gender" class="gender__select">
+					<span class="main__title gender__text">Gender</span>
+					<label for="male">
+						<input type="radio" id="male" class="gender__input">
+						<span class="male__text">Male</span>
+					</label>
+					<label for="female">
+						<input type="radio" id="female" class="gender__input" checked>
+						<span>Female</span>
+					</label>
+				</div>
+				<label for="password">
+					<span class="main__title password__text">Password</span>
+					<input type="password" id="password" class="main__input" maxlength="100" minlength="8" required>
+				</label>
+				<label for="confirm">
+					<span class="main__title confirm__text">Confirm Password</span>
+					<input type="password" id="confirm" class="main__input" maxlength="100" minlength="8" required>
+				</label>
+			</div>
+			<div class="registration__footer">
+				<div class="footer__login">
+					<p class="footer__login__text">Have an account?
+						<a href="#" class="footer__login__link">Login</a>
+					</p>
+				</div>
+				<button type="submit" class="footer__btn">Complete Signup</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
