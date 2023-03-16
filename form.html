@@ -15,7 +15,7 @@
 	<div class="container">
 		<div class="header">
 			<h1 class="header__title">Sign up</h1>
-			<img class="signup-icon" src="assets/person.svg" alt="Sign up icon" width="353" height="353">
+			<img class="signup-icon" src="assets/person.svg" alt="Sign up icon">
 		</div>
 		<form class="registration">
 			<div class="registration__header">
@@ -38,10 +38,7 @@
 				<div class="nationality">
 					<label for="nationality">
 						<span class="main__title nationality__text">Nationality</span>
-						<select
-							style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
-							class="nationality__select main__input"
-							id="nationality" required>
+						<select class="nationality__select main__input" id="nationality" required>
 							<option value="">American</option>
 						</select>
 					</label>
@@ -52,33 +49,27 @@
 						<input type="email" placeholder="alice.miller@yahoo.com" id="email" class="main__input" minlength="2" required>
 					</label>
 				</div>
-				<div class="birthday">
+				<div class="birthdate">
 					<span class="main__title birthdate__text">Date of Birth</span>
 					<div id="birthdate" class="birthday__select">
 						<label for="day">
-							<select
-								style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
-								class="day__select" id="day" required>
+							<select class="day__select" id="day" required>
 								<option value="">21</option>
 							</select>
 						</label>
 						<label for="month">
-							<select
-								style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
-								class="month__select" id="month" required>
+							<select class="month__select" id="month" required>
 								<option value="">December</option>
 							</select>
 						</label>
 						<label for="year">
-							<select
-								style="font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 16px"
-								class="year__select" id="year" required>
+							<select class="year__select" id="year" required>
 								<option value="">1995</option>
 							</select>
 						</label>
 					</div>
 				</div>
-				<div id="gender" class="gender__select">
+				<div id="gender" class="gender">
 					<span class="main__title gender__text">Gender</span>
 					<label for="male">
 						<input type="radio" id="male" class="gender__input">
