@@ -377,8 +377,58 @@ input[type="radio"] {
 
 @media (max-width: 460px) {
 	.container {
+		grid-template-columns: 40px auto;
 		max-width: 265px;
 		max-height: 380px;
-		margin: 10px;
+		margin: 5px;
+	}
+
+	/*Header*/
+	.registration__header__text {
+		font-size: 9px;
+	}
+
+	.signup-icon {
+		width: 150px;
+		height: 150px;
+		bottom: 20px;
+		right: -235px;
+	}
+
+	/*Main*/
+	.registration__main {
+		grid-template-columns: 90px 90px;
+		column-gap: 10px;
+		row-gap: 5px;
+		margin: 10px 0 15px 2.5px;
+	}
+
+	.main__title {
+		line-height: 10px;
+	}
+
+	label {
+		width: 100%;
+	}
+
+	input {
+		width: 100px;
+	}
+
+	.gender {
+		display: flex;
+		flex-direction: column;
+		align-self: flex-start;
+		row-gap: 5px;
+	}
+
+	.gender__text {
+		padding: 0;
+	}
+
+	/*Footer*/
+	.footer__btn {
+		font-size: 9px;
+		padding: 3px 5px 3px 5px;
 	}
 }
