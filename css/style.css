@@ -324,6 +324,11 @@ input[type="radio"] {
 		line-height: 10px;
 	}
 
+	.signup-icon {
+		bottom: -15px;
+		right: -290px;
+	}
+
 	/*Main*/
 	.registration__main {
 		grid-template-columns: 100px 100px;
