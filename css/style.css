@@ -12,10 +12,15 @@ body {
 	overflow: hidden;
 }
 
+.container,
+.registration__main,
+.birthday__select {
+	display: grid;
+}
+
 .container {
 	max-width: 665px;
 	max-height: 480px;
-	display: grid;
 	grid-template-columns: 137.2px 527.8px;
 	column-gap: 0;
 	background-color: #FFFFFF;
@@ -60,7 +65,6 @@ body {
 
 /*Main*/
 .registration,
-.birthday__select,
 .registration__footer {
 	display: flex;
 }
@@ -113,6 +117,7 @@ input[type="radio"],
 .day__select,
 .month__select,
 .year__select {
+	width: 100%;
 	border: none;
 }
 
@@ -120,6 +125,7 @@ input[type="radio"],
 .day__select,
 .month__select,
 .year__select {
+	width: 100%;
 	padding: 0;
 }
 
@@ -144,7 +150,6 @@ input[type="radio"],
 }
 
 .registration__main {
-	display: grid;
 	grid-template-columns: 234.5px 234.5px;
 	column-gap: 15.5px;
 	row-gap: 16.3px;
@@ -164,10 +169,6 @@ input[type="radio"],
 
 .nationality__select {
 	text-align: left;
-}
-
-.birthday__select {
-	column-gap: 9.88px;
 }
 
 .day__select,
@@ -192,24 +193,20 @@ input:focus {
 	outline: none;
 }
 
-:focus::-webkit-input-placeholder {
-	color: transparent;
-}
-
-:focus::-moz-placeholder {
-	color: transparent;
-}
-
-:focus:-moz-placeholder {
-	color: transparent;
-}
-
+:focus::-webkit-input-placeholder,
+:focus::-moz-placeholder,
+:focus:-moz-placeholder,
 :focus:-ms-input-placeholder {
 	color: transparent;
 }
 
 .gender__input {
 	margin: 0;
+}
+
+.birthday__select {
+	grid-template-columns: 56px 91px 67px;
+	column-gap: 9.88px;
 }
 
 .male__text {
