@@ -20,7 +20,7 @@ body {
 
 .container {
 	max-width: 665px;
-	max-height: 480px;
+	height: auto;
 	grid-template-columns: 137.2px 527.8px;
 	column-gap: 0;
 	background-color: #FFFFFF;
@@ -231,6 +231,14 @@ input:focus {
 .invalid {
 	border-bottom: 2px solid #FF2828;
 	color: #FF2828;
+}
+
+.emailError {
+	display: none;
+	font-size: 8px;
+	line-height: 10px;
+	color: #FF2828;
+	padding-top: 5px;
 }
 
 /*Footer*/

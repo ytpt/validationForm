@@ -44,7 +44,7 @@ for (let input of inputs) {
 				break;
 
 			case "password":
-				check = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8}$/.test(value);
+				check = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}/g.test(value);
 				break;
 
 			case "confirm":
@@ -55,10 +55,18 @@ for (let input of inputs) {
 		this.classList.remove("invalid");
 		this.classList.remove("valid");
 
+		if (this.nextElementSibling) {
+			this.nextElementSibling.style.display = "none";
+		}
+
 		if (check) {
 			this.classList.add("valid");
 		} else {
 			this.classList.add("invalid");
+
+			if (this.nextElementSibling) {
+				this.nextElementSibling.style.display = "block";
+			}
 		}
 	})
 }
