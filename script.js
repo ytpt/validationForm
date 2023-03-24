@@ -6,6 +6,14 @@ form.addEventListener("submit", function(event) {
 	event.preventDefault();
 
 	if (formValidate(this)) {
+		// 	let response = await fetch("server-ok.json", {
+		// 		method: "POST",
+		// 		body: new FormData(form)
+		// 	});
+		//
+		// 	let result = await response.json();
+		// 	console.log(result);
+		// }
 		console.log("Форма отправлена");
 	}
 });
@@ -36,7 +44,7 @@ for (let input of inputs) {
 				break;
 
 			case "password":
-				check = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/.test(value);
+				check = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8}$/.test(value);
 				break;
 
 			case "confirm":
