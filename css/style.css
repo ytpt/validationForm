@@ -19,7 +19,7 @@ body {
 	grid-template-columns: 137.2px 527.8px;
 	column-gap: 0;
 	background-color: #FFFFFF;
-	margin: 50px;
+	margin: 0 auto;
 }
 
 /*Header*/
@@ -98,6 +98,7 @@ body {
 }
 
 .nationality__select,
+input[type="radio"],
 .footer__login__link,
 .footer__btn {
 	cursor: pointer;
@@ -187,6 +188,26 @@ input[type="radio"] {
 	height: 12px;
 }
 
+input:focus {
+	outline: none;
+}
+
+:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+:focus::-moz-placeholder {
+	color: transparent;
+}
+
+:focus:-moz-placeholder {
+	color: transparent;
+}
+
+:focus:-ms-input-placeholder {
+	color: transparent;
+}
+
 .gender__input {
 	margin: 0;
 }
@@ -205,6 +226,17 @@ input[type="radio"] {
 	padding: 1.1px 0 3.3px 0;
 }
 
+.valid {
+	border-bottom: 0.7px solid #F2F2F2;
+	color: #000;
+}
+
+.invalid {
+	border-bottom: 2px solid #FF2828;
+	color: #FF2828;
+}
+
+/*Footer*/
 .registration__footer {
 	justify-content: space-between;
 }
@@ -313,7 +345,6 @@ input[type="radio"] {
 	.container {
 		max-width: 365px;
 		max-height: 380px;
-		margin: 10px;
 	}
 
 	/*Header*/
@@ -380,7 +411,6 @@ input[type="radio"] {
 		grid-template-columns: 40px auto;
 		max-width: 265px;
 		max-height: 380px;
-		margin: 5px;
 	}
 
 	/*Header*/

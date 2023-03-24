@@ -17,7 +17,7 @@
 			<h1 class="header__title">Sign up</h1>
 			<img class="signup-icon" src="assets/person.svg" alt="Sign up icon">
 		</div>
-		<form class="registration">
+		<form class="registration" name="signUp" id="signUp">
 			<div class="registration__header">
 				<h2 class="registration__header__title">New user?</h2>
 				<p class="registration__header__text">Use the form below to create your account.</p>
@@ -26,45 +26,63 @@
 				<div class="firstname">
 					<label for="firstname">
 						<span class="main__title firstname__text">First Name</span>
-						<input type="text" placeholder="Alice" id="firstname" class="main__input" minlength="2" required>
+						<input type="text" placeholder="Alice" id="firstname" data-rule="name"
+									 class="main__input" minlength="2" name="firstname">
 					</label>
 				</div>
 				<div class="lastname">
 					<label for="lastname">
 						<span class="main__title lastname__text">Last Name</span>
-						<input type="text" placeholder="Miller" id="lastname" class="main__input" minlength="2" required>
+						<input type="text" placeholder="Miller" id="lastname" data-rule="name"
+									 class="main__input" minlength="2" name="lastname">
 					</label>
 				</div>
 				<div class="nationality">
 					<label for="nationality">
 						<span class="main__title nationality__text">Nationality</span>
-						<select class="nationality__select main__input" id="nationality" required>
-							<option value="">American</option>
+						<select class="nationality__select main__input" id="nationality"
+										data-rule="nationality" name="nationality">
+							<option value="Default">American</option>
+							<option value="AU">Australian</option>
+							<option value="CA">Canadian</option>
+							<option value="IN">Indian</option>
+							<option value="RU">Russian</option>
 						</select>
 					</label>
 				</div>
 				<div class="email">
 					<label for="email">
 						<span class="main__title email__text">E-mail</span>
-						<input type="email" placeholder="alice.miller@yahoo.com" id="email" class="main__input" minlength="2" required>
+						<input type="email" placeholder="alice.miller@yahoo.com" data-rule="email"
+									 id="email" class="main__input" minlength="2">
 					</label>
 				</div>
 				<div class="birthdate">
 					<span class="main__title birthdate__text">Date of Birth</span>
 					<div id="birthdate" class="birthday__select">
 						<label for="day">
-							<select class="day__select" id="day" required>
-								<option value="">21</option>
+							<select class="day__select" id="day">
+								<option value="Default">21</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
 							</select>
 						</label>
 						<label for="month">
-							<select class="month__select" id="month" required>
-								<option value="">December</option>
+							<select class="month__select" id="month">
+								<option value="Default">December</option>
+								<option value="January">January</option>
+								<option value="February">February</option>
+								<option value="March">March</option>
 							</select>
 						</label>
 						<label for="year">
-							<select class="year__select" id="year" required>
-								<option value="">1995</option>
+							<select class="year__select" id="year">
+								<option value="Default">1995</option>
+								<option value="1996">1996</option>
+								<option value="1997">1997</option>
+								<option value="1998">1998</option>
 							</select>
 						</label>
 					</div>
@@ -76,20 +94,23 @@
 						<span class="male__text">Male</span>
 					</label>
 					<label for="female">
-						<input type="radio" id="female" class="gender__input" name="gender" checked>
+						<input type="radio" id="female" class="gender__input"
+									 name="gender" checked>
 						<span>Female</span>
 					</label>
 				</div>
 				<div class="password">
 					<label for="password">
 						<span class="main__title password__text">Password</span>
-						<input type="password" id="password" class="main__input" maxlength="100" minlength="8" required>
+						<input type="password" id="password" class="main__input" data-rule="password"
+									 maxlength="100" minlength="8">
 					</label>
 				</div>
 				<div class="confirm">
 					<label for="confirm">
 						<span class="main__title confirm__text">Confirm Password</span>
-						<input type="password" id="confirm" class="main__input" maxlength="100" minlength="8" required>
+						<input type="password" id="confirm" class="main__input" data-rule="confirm"
+									 maxlength="100" minlength="8">
 					</label>
 				</div>
 			</div>
