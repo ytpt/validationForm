@@ -14,7 +14,23 @@ form.addEventListener("submit", function(event) {
 		// 	let result = await response.json();
 		// 	console.log(result);
 		// }
-		console.log("Форма отправлена");
+		document.querySelector(".signup-icon").style.display = "none";
+
+		let success = document.createElement("div");
+		success.classList.add("success");
+		success.innerHTML = `
+			<div class="success__main">
+				<h2 class="success__main__title">Thank You!</h2>
+				<p class="success__main__text">you registered!</p>
+			</div>
+			<div class="success__login">
+				<p>Have an account?
+					<a href="#" class="success__login__link">Login</a>
+				</p>
+			</div>
+		`;
+
+		form.replaceWith(success);
 	}
 });
 
