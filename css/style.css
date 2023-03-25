@@ -13,7 +13,7 @@ body {
 }
 
 .container,
-.registration__main,
+.registration__main__line,
 .birthday__select {
 	display: grid;
 }
@@ -65,6 +65,7 @@ body {
 
 /*Main*/
 .registration,
+.registration__main,
 .registration__footer {
 	display: flex;
 }
@@ -94,11 +95,6 @@ body {
 .year__select {
 	font-size: 14px;
 	line-height: 16px;
-}
-
-.registration__main,
-.registration__footer {
-	align-items: center;
 }
 
 .nationality__select,
@@ -136,8 +132,12 @@ input[type="radio"],
 	border-bottom: 0.7px solid #F2F2F2;
 }
 
-.registration {
+.registration,
+.registration__main {
 	flex-direction: column;
+}
+
+.registration {
 	padding: 38.52px 22px 32.38px 20.8px;
 	z-index: 100;
 }
@@ -150,10 +150,21 @@ input[type="radio"],
 }
 
 .registration__main {
-	grid-template-columns: 234.5px 234.5px;
-	column-gap: 15.5px;
-	row-gap: 16.3px;
-	margin: 20px 0 98.3px 0;
+	row-gap: 16.18px;
+	margin: 20px 0 107.7px 0;
+}
+
+.registration__main__line {
+	grid-template-columns: 1fr 1fr;
+	column-gap: 14px;
+}
+
+.registration__main__line:nth-child(1) {
+	padding-bottom: 0.12px;
+}
+
+.registration__main__line:nth-child(2) {
+	padding-bottom: 1.22px;
 }
 
 .main__title {
@@ -244,6 +255,7 @@ input:focus {
 /*Footer*/
 .registration__footer {
 	justify-content: space-between;
+	align-items: center;
 }
 
 .footer__login__text {
@@ -268,7 +280,6 @@ input:focus {
 @media (max-width: 768px) {
 	.container {
 		max-width: 465px;
-		max-height: 280px;
 		grid-template-columns: 80px auto;
 	}
 
@@ -324,11 +335,13 @@ input:focus {
 	}
 
 	.birthday__select {
-		column-gap: 3px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
 	}
 
 	label {
-		width: 70px;
+		width: 100%;
 	}
 
 	input {
@@ -349,7 +362,6 @@ input:focus {
 @media (max-width: 572px) {
 	.container {
 		max-width: 365px;
-		max-height: 380px;
 	}
 
 	/*Header*/
@@ -374,7 +386,7 @@ input:focus {
 	}
 
 	label {
-		width: 50px;
+		width: 100%;
 	}
 
 	input {
@@ -396,7 +408,7 @@ input:focus {
 	}
 
 	.birthday__select {
-		display: grid;
+		display: flex;
 		row-gap: 5px;
 	}
 
@@ -415,7 +427,6 @@ input:focus {
 	.container {
 		grid-template-columns: 40px auto;
 		max-width: 265px;
-		max-height: 380px;
 	}
 
 	/*Header*/
