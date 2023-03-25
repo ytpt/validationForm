@@ -20,7 +20,8 @@ body {
 
 .container {
 	max-width: 665px;
-	height: 480px;
+	height: auto;
+	min-height: 480px;
 	grid-template-columns: 137.2px 527.8px;
 	column-gap: 0;
 	background-color: #FFFFFF;
@@ -66,7 +67,9 @@ body {
 /*Main*/
 .registration,
 .registration__main,
-.registration__footer {
+.registration__footer,
+.success,
+.success__main {
 	display: flex;
 }
 
@@ -82,17 +85,17 @@ body {
 }
 
 .registration,
-.main__input::placeholder {
+.main__input::placeholder,
+select,
+.success {
 	font-family: 'Work Sans', sans-serif;
 }
 
 .registration,
 .main__input::placeholder,
 .registration__header__text,
-.nationality__select,
-.day__select,
-.month__select,
-.year__select {
+select,
+.success__main__text {
 	font-size: 14px;
 	line-height: 16px;
 }
@@ -133,7 +136,9 @@ input[type="radio"],
 }
 
 .registration,
-.registration__main {
+.registration__main,
+.success,
+.success__main {
 	flex-direction: column;
 }
 
@@ -189,9 +194,6 @@ input[type="radio"],
 }
 
 select {
-	font-family: 'Work Sans', sans-serif;
-	font-size: 14px;
-	line-height: 16px;
 	padding-bottom: 6.3px;
 }
 
@@ -239,16 +241,19 @@ input:focus {
 	color: #000;
 }
 
+.invalid,
+.emailError {
+	color:#FF2828;
+}
+
 .invalid {
 	border-bottom: 2px solid #FF2828;
-	color: #FF2828;
 }
 
 .emailError {
 	display: none;
 	font-size: 8px;
 	line-height: 10px;
-	color: #FF2828;
 	padding-top: 5px;
 }
 
@@ -278,16 +283,9 @@ input:focus {
 }
 
 /*After sending form*/
-.success,
-.success__main {
-	display: flex;
-	flex-direction: column;
-}
-
 .success {
 	justify-content: end;
 	row-gap: 152px;
-	font-family: 'Work Sans', sans-serif;
 	margin: 0 0 43.48px 20.8px;
 }
 
@@ -302,11 +300,6 @@ input:focus {
 	letter-spacing: -0.46px;
 }
 
-.success__main__text {
-	font-size: 14px;
-	line-height: 16px;
-}
-
 .success__login {
 	font-size: 13px;
 	line-height: 15px;
@@ -315,7 +308,7 @@ input:focus {
 @media (max-width: 768px) {
 	.container {
 		max-width: 465px;
-		height: 300px;
+		min-height: 300px;
 		grid-template-columns: 80px auto;
 	}
 
@@ -423,7 +416,7 @@ input:focus {
 @media (max-width: 572px) {
 	.container {
 		max-width: 365px;
-		height: 275px;
+		min-height: 275px;
 	}
 
 	/*Header*/
@@ -489,7 +482,7 @@ input:focus {
 	.container {
 		grid-template-columns: 40px auto;
 		max-width: 265px;
-		height: 265px;
+		min-height: 265px;
 	}
 
 	/*Header*/
