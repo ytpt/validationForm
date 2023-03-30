@@ -1,0 +1,26 @@
+{
+	"success": false,
+	"message": "Incorrect",
+	"errors": [
+		{
+			"field": "firstname",
+			"message": "Name should be in English."
+		},
+		{
+			"field": "lastname",
+			"message": "Name should be in English."
+		},
+		{
+			"field": "email",
+			"message": "Incorrect email format."
+		},
+		{
+			"field": "password",
+			"message": "Password should be at least 8 characters."
+		},
+		{
+			"field": "confirm",
+			"message": "Confirm password please."
+		}
+	]
+}
