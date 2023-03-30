@@ -1,24 +1,25 @@
 const form = document.getElementById( "signUp");
-let inputs = document.querySelectorAll("input[data-rule]");
-let selects = document.querySelectorAll("select");
 
-form.addEventListener("submit", function(event) {
-	event.preventDefault();
+function fetchJSONFile(path, callback) {
+	let httpRequest = new XMLHttpRequest();
+	httpRequest.onreadystatechange = function() {
+		if (httpRequest.readyState === 4) {
+			if (httpRequest.status === 200) {
+				let data = JSON.parse(httpRequest.responseText);
+				if (callback) callback(data);
+			}
+		}
+	};
+	httpRequest.open('GET', path);
+	httpRequest.send();
+}
 
-	if (formValidate(this)) {
-		// 	let response = await fetch("server-ok.json", {
-		// 		method: "POST",
-		// 		body: new FormData(form)
-		// 	});
-		//
-		// 	let result = await response.json();
-		// 	console.log(result);
-		// }
-		document.querySelector(".signup-icon").style.display = "none";
+function buildSuccessMessage() {
+	document.querySelector(".signup-icon").style.display = "none";
 
-		let success = document.createElement("div");
-		success.classList.add("success");
-		success.innerHTML = `
+	let success = document.createElement("div");
+	success.classList.add("success");
+	success.innerHTML = `
 			<div class="success__main">
 				<h2 class="success__main__title">Thank You!</h2>
 				<p class="success__main__text">you registered!</p>
@@ -29,72 +30,71 @@ form.addEventListener("submit", function(event) {
 				</p>
 			</div>
 		`;
+	form.replaceWith(success);
+}
 
-		form.replaceWith(success);
-	}
+form.addEventListener("submit",  function(event) {
+	event.preventDefault();
+		fetchJSONFile('http://localhost:63342/validationForm/server-error.json', function(data){
+			if (data.success === true) {
+				buildSuccessMessage();
+			} else {
+				data.errors.map(error => {
+					let input = document.querySelector(`.main__input.${error.field}`);
+					if (input) {
+						validateInputs(error, input);
+					}
+				})
+			}
+		});
 });
 
-function formValidate() {
-	return true;
-}
+function validateInputs(error, input) {
+	let rule = input.dataset.rule;
+	let value = input.value;
+	let check;
 
-for (let input of inputs) {
-	input.addEventListener("blur", function() {
-		let rule = this.dataset.rule;
-		let value = this.value;
-		let check;
+	switch (rule) {
+		case "name":
+			check = /^[A-Za-z]+$/.test(value);
+			break;
 
-		switch(rule) {
-			case "name":
-				check = /^[A-Za-z]+$/.test(value);
-				break;
+		case "email":
+			check = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+			break;
 
-			case "email":
-				check = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
-				break;
+		case "birthdate":
+			break;
 
-			case "birthdate":
-				break;
+		case "gender":
+			break;
 
-			case "gender":
-				break;
+		case "password":
+			check = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}/g.test(value);
+			break;
 
-			case "password":
-				check = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}/g.test(value);
-				break;
+		case "confirm":
+			let pass1 = document.getElementById("password").value;
+			pass1 === value ? check = true : check = false;
+	}
 
-			case "confirm":
-				let pass1 = document.getElementById("password").value;
-				pass1 === value ? check = true : check = false;
+	input.classList.remove("invalid");
+	input.classList.remove("valid");
+
+	if (input.nextElementSibling) {
+		input.nextElementSibling.style.display = "none";
+	}
+
+	if (check) {
+		input.classList.add("valid");
+	} else {
+		input.classList.add("invalid");
+
+		if (input.nextElementSibling) {
+			input.nextElementSibling.style.display = "block";
+			let errorSpan = document.querySelector(`.validation__error.${error.field}`);
+			errorSpan.innerHTML = error.message;
+			errorSpan.style.display = "block";
 		}
-
-		this.classList.remove("invalid");
-		this.classList.remove("valid");
-
-		if (this.nextElementSibling) {
-			this.nextElementSibling.style.display = "none";
-		}
-
-		if (check) {
-			this.classList.add("valid");
-		} else {
-			this.classList.add("invalid");
-
-			if (this.nextElementSibling) {
-				this.nextElementSibling.style.display = "block";
-			}
-		}
-	})
-}
-
-for (let select of selects) {
-	select.addEventListener("blur", function() {
-
-		select.classList.remove("invalid");
-		select.classList.remove("valid");
-
-		select.value === "Default"
-			? select.classList.add("invalid")
-			: select.classList.add("valid");
-	})
+	}
 }
