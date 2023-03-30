@@ -28,14 +28,16 @@
 						<label for="firstname">
 							<span class="main__title firstname__text">First Name</span>
 							<input type="text" placeholder="Alice" id="firstname" data-rule="name"
-										 class="main__input" minlength="2" name="firstname">
+										 class="main__input firstname" minlength="2" name="firstname">
+							<span class="validation__error firstname"></span>
 						</label>
 					</div>
 					<div class="lastname">
 						<label for="lastname">
 							<span class="main__title lastname__text">Last Name</span>
 							<input type="text" placeholder="Miller" id="lastname" data-rule="name"
-										 class="main__input" minlength="2" name="lastname">
+										 class="main__input lastname" minlength="2" name="lastname">
+							<span class="validation__error lastname"></span>
 						</label>
 					</div>
 				</div>
@@ -57,8 +59,8 @@
 						<label for="email">
 							<span class="main__title email__text">E-mail</span>
 							<input type="email" placeholder="alice.miller@yahoo.com" data-rule="email"
-										 id="email" class="main__input" minlength="2">
-							<span class="emailError">Incorrect email format</span>
+										 id="email" class="main__input email" minlength="2">
+							<span class="validation__error email"></span>
 						</label>
 					</div>
 				</div>
@@ -110,16 +112,17 @@
 					<div class="password">
 						<label for="password">
 							<span class="main__title password__text">Password</span>
-							<input type="password" id="password" class="main__input" data-rule="password"
+							<input type="password" id="password" class="main__input password" data-rule="password"
 										 maxlength="100" minlength="8">
-							<span class="emailError">Password should be at least 8 characters.<br>Has a combination of upper and lowercase letters, numbers. </span>
+							<span class="validation__error password"></span>
 						</label>
 					</div>
 					<div class="confirm">
 						<label for="confirm">
 							<span class="main__title confirm__text">Confirm Password</span>
-							<input type="password" id="confirm" class="main__input" data-rule="confirm"
+							<input type="password" id="confirm" class="main__input confirm" data-rule="confirm"
 										 maxlength="100" minlength="8">
+							<span class="validation__error confirm"></span>
 						</label>
 					</div>
 				</div>
