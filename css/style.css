@@ -242,7 +242,7 @@ input:focus {
 }
 
 .invalid,
-.emailError {
+.validation__error {
 	color:#FF2828;
 }
 
@@ -250,7 +250,7 @@ input:focus {
 	border-bottom: 2px solid #FF2828;
 }
 
-.emailError {
+.validation__error {
 	display: none;
 	font-size: 8px;
 	line-height: 10px;
