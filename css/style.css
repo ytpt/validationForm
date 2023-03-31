@@ -172,6 +172,10 @@ input[type="radio"],
 	padding-bottom: 1.22px;
 }
 
+.registration__main__line > div {
+	opacity: 0;
+}
+
 .main__title {
 	font-size: 12px;
 	line-height: 14px;
@@ -181,6 +185,35 @@ input[type="radio"],
 
 .main__input {
 	padding: 0 0 6.3px 0;
+}
+
+.slideUp {
+	display: block;
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+	visibility: visible !important;
+}
+
+@keyframes slideUp {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(50%);
+	}
+	100% {
+		-webkit-transform: translateY(0%);
+	}
 }
 
 .nationality__select {

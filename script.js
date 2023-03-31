@@ -1,4 +1,16 @@
 const form = document.getElementById( "signUp");
+const formElements = document.querySelectorAll(".registration__main__line > div");
+
+function slideUp() {
+	setTimeout(function iter(i) {
+		formElements[i].classList.add("slideUp");
+		formElements[i].style.opacity = "100";
+		if (++i < formElements.length) {
+			setTimeout(iter, i * 150, i);
+		}
+	}, 0, 0);
+}
+slideUp();
 
 function fetchJSONFile(path, callback) {
 	let httpRequest = new XMLHttpRequest();
