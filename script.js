@@ -39,6 +39,9 @@ form.addEventListener("submit",  function(event) {
 			if (data.success === true) {
 				buildSuccessMessage();
 			} else {
+				let completeBtn = document.querySelector(".footer__btn");
+				completeBtn.classList.add("footer__btn-shake");
+
 				data.errors.map(error => {
 					let input = document.querySelector(`.main__input.${error.field}`);
 					if (input) {
